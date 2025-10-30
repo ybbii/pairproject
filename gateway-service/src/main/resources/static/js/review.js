@@ -63,15 +63,19 @@ async function editReview(id) {
     }
 }
 
+
+
 // 리뷰 저장 (등록/수정 공통)
 async function saveReview() {
     const id = document.getElementById('reviewId').value;
     const review = {
-        movieId: parseInt(document.getElementById('movieId').value),
-        userId: parseInt(document.getElementById('userId').value),
+        movieId: document.getElementById('movieId').value,
+        userId: document.getElementById('userId').value,
         rating: parseInt(document.getElementById('rating').value),
         comment: document.getElementById('comment').value
     };
+
+    console.log(`[saveReview] 요청 id=${id}, movieId=${review.movieId}, userId=${review.userId}`);
 
     try {
         const url = id ? `/api/reviews/${id}` : '/api/reviews';
@@ -88,6 +92,10 @@ async function saveReview() {
         if (!response.ok) {
             throw new Error('저장에 실패했습니다.');
         }
+
+        const savedReview = await response.json();
+        console.log(`[saveReview] 성공:`, savedReview);
+
 
         reviewModal.hide();
         loadReviews();

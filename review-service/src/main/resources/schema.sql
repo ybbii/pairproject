@@ -1,8 +1,7 @@
 CREATE TABLE IF NOT EXISTS review (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    movie_id BIGINT NOT NULL,
-    user_id BIGINT NOT NULL,
+    movie_id VARCHAR(255) NOT NULL,
+    user_id VARCHAR(255) NOT NULL,
     rating INT NOT NULL,
-    comment VARCHAR(1000),
-    FOREIGN KEY (movie_id) REFERENCES movie(id)
+    comment VARCHAR(1000)
     );

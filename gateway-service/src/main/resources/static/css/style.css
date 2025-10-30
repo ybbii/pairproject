@@ -49,6 +49,12 @@ h1 {
 .card p {
     color: #fff;
 }
+.form-label {
+    color: #1e1e1e;
+}
+.modal-header h5 {
+    color: #1e1e1e;
+}
 .btn-success {
     background: #d4af37;
     border: none;

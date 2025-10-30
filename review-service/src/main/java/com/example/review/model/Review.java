@@ -15,8 +15,8 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long movieId; // 영화
-    private Long userId; // 작성자
+    private String movieId; // 영화
+    private String userId; // 작성자
     private Integer rating; // 평점
     private String comment;  // 리뷰 내용
 }
